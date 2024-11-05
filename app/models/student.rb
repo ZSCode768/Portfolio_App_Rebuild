@@ -11,6 +11,8 @@ class Student < ApplicationRecord
     #https://guides.rubyonrails.org/v7.1/association_basics.html
     has_one :portfolio, dependent: :destroy
 
+    has_many :projects, dependent: :destroy
+
     #after student created create and link portfolio
     after_create :create_portfolio
     #allow editing of portfolio information in form
